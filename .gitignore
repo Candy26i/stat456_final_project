@@ -1,0 +1,11 @@
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+data/raw/*
+!data/raw/.gitkeep
+results/*
+!results/example/
+!results/example/**
+*.rds
+*.ubj

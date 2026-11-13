@@ -1,0 +1,15 @@
+name: R correctness tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+          use-public-rspm: true
+      - name: Install the boosting dependency
+        run: Rscript scripts/install_dependencies.R
+      - name: Run deterministic, offline tests
+        run: Rscript scripts/run_tests.R
